@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <main
       style={{
-        background: "#000",
-        color: "#fff",
+        background: "#050505",
+        color: "white",
         minHeight: "100vh",
         fontFamily: "sans-serif",
       }}
@@ -15,136 +15,244 @@ export default function Home() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          padding: "30px 60px",
-          position: "fixed",
-          width: "100%",
-          top: 0,
-          background: "#000",
+          alignItems: "center",
+          padding: "20px 50px",
+          borderBottom: "1px solid #1a1a1a",
         }}
       >
-        <h2>CORELAB ACADEMY</h2>
+        {/* LOGO */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "15px",
+          }}
+        >
+          <div
+            style={{
+              width: "32px",
+              height: "32px",
+              background: "#f2b233",
+              borderRadius: "8px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "#000",
+              fontWeight: "bold",
+            }}
+          >
+            C
+          </div>
 
-        <div style={{ display: "flex", gap: "30px" }}>
-          <a href="#home" style={{ color: "#fff" }}>Home</a>
-          <a href="#courses" style={{ color: "#fff" }}>Courses</a>
-          <a href="#teachers" style={{ color: "#fff" }}>Teachers</a>
-          <a href="#contact" style={{ color: "#fff" }}>Contact</a>
+          <h2 style={{ letterSpacing: "4px" }}>CORE LAB</h2>
+        </div>
+
+        {/* MENU */}
+        <div
+          style={{
+            display: "flex",
+            gap: "35px",
+            opacity: 0.8,
+          }}
+        >
+          <a href="#" style={{ color: "white", textDecoration: "none" }}>
+            Home
+          </a>
+
+          <a href="#" style={{ color: "white", textDecoration: "none" }}>
+            Courses
+          </a>
+
+          <a href="#" style={{ color: "white", textDecoration: "none" }}>
+            Programs
+          </a>
+
+          <a href="#" style={{ color: "white", textDecoration: "none" }}>
+            About Us
+          </a>
+
+          <a href="#" style={{ color: "white", textDecoration: "none" }}>
+            Success Stories
+          </a>
+
+          <a href="#" style={{ color: "white", textDecoration: "none" }}>
+            Contact
+          </a>
+        </div>
+
+        {/* BUTTONS */}
+        <div
+          style={{
+            display: "flex",
+            gap: "15px",
+          }}
+        >
+          <button
+            style={{
+              background: "transparent",
+              border: "1px solid #333",
+              color: "white",
+              padding: "10px 25px",
+              borderRadius: "12px",
+            }}
+          >
+            Login
+          </button>
+
+          <button
+            style={{
+              background: "#f2b233",
+              border: "none",
+              color: "#000",
+              padding: "10px 25px",
+              borderRadius: "12px",
+              fontWeight: "bold",
+            }}
+          >
+            Dashboard
+          </button>
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* LOGIN CARD */}
       <section
-        id="home"
         style={{
-          height: "100vh",
           display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          padding: "80px 20px",
         }}
       >
-        <h1
-          style={{
-            fontSize: "96px",
-            fontWeight: "bold",
-          }}
-        >
-          CORELAB ACADEMY
-        </h1>
-
-        <p
-          style={{
-            marginTop: "20px",
-            fontSize: "32px",
-            opacity: 0.7,
-          }}
-        >
-          Future Learning Platform
-        </p>
-      </section>
-
-      {/* COURSES */}
-      <section
-        id="courses"
-        style={{
-          padding: "120px 80px",
-        }}
-      >
-        <h2 style={{ fontSize: "48px", marginBottom: "40px" }}>
-          Our Courses
-        </h2>
-
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "30px",
+            width: "420px",
+            background: "#11131c",
+            border: "1px solid #2a2a2a",
+            borderRadius: "30px",
+            padding: "50px",
           }}
         >
+          {/* ICON */}
           <div
             style={{
-              border: "1px solid #333",
-              padding: "40px",
-              borderRadius: "20px",
+              width: "48px",
+              height: "48px",
+              background: "#f2b233",
+              borderRadius: "10px",
+              margin: "0 auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "#000",
+              fontWeight: "bold",
+              marginBottom: "25px",
             }}
           >
-            <h3>Physics</h3>
-            <p>Advanced Physics Programs</p>
+            C
           </div>
 
-          <div
+          <h1
             style={{
-              border: "1px solid #333",
-              padding: "40px",
-              borderRadius: "20px",
+              textAlign: "center",
+              marginBottom: "10px",
             }}
           >
-            <h3>Mathematics</h3>
-            <p>Exam Preparation Courses</p>
+            Welcome Back!
+          </h1>
+
+          <p
+            style={{
+              textAlign: "center",
+              opacity: 0.6,
+              marginBottom: "30px",
+            }}
+          >
+            Login to your account
+          </p>
+
+          {/* ROLE TABS */}
+          <div
+            style={{
+              display: "flex",
+              background: "#0a0c12",
+              borderRadius: "14px",
+              padding: "5px",
+              marginBottom: "25px",
+            }}
+          >
+            {["Student", "Teacher", "Admin", "Accounting"].map((role) => (
+              <button
+                key={role}
+                style={{
+                  flex: 1,
+                  padding: "12px",
+                  borderRadius: "10px",
+                  border: "none",
+                  background: role === "Teacher" ? "#f2b233" : "transparent",
+                  color: role === "Teacher" ? "#000" : "#aaa",
+                  fontWeight: "bold",
+                }}
+              >
+                {role}
+              </button>
+            ))}
           </div>
 
-          <div
+          {/* INPUTS */}
+          <div style={{ marginBottom: "20px" }}>
+            <p style={{ marginBottom: "10px", opacity: 0.7 }}>
+              Email or Phone
+            </p>
+
+            <input
+              type="text"
+              placeholder="Enter email or phone number"
+              style={{
+                width: "100%",
+                padding: "16px",
+                background: "#090b10",
+                border: "1px solid #222",
+                borderRadius: "12px",
+                color: "white",
+              }}
+            />
+          </div>
+
+          <div style={{ marginBottom: "25px" }}>
+            <p style={{ marginBottom: "10px", opacity: 0.7 }}>
+              Password
+            </p>
+
+            <input
+              type="password"
+              placeholder="Enter your password"
+              style={{
+                width: "100%",
+                padding: "16px",
+                background: "#090b10",
+                border: "1px solid #222",
+                borderRadius: "12px",
+                color: "white",
+              }}
+            />
+          </div>
+
+          {/* LOGIN BUTTON */}
+          <button
             style={{
-              border: "1px solid #333",
-              padding: "40px",
-              borderRadius: "20px",
+              width: "100%",
+              padding: "16px",
+              background: "#f2b233",
+              border: "none",
+              borderRadius: "14px",
+              color: "#000",
+              fontWeight: "bold",
+              fontSize: "16px",
             }}
           >
-            <h3>Science</h3>
-            <p>Integrated Science Programs</p>
-          </div>
+            Login
+          </button>
         </div>
-      </section>
-
-      {/* TEACHERS */}
-      <section
-        id="teachers"
-        style={{
-          padding: "120px 80px",
-        }}
-      >
-        <h2 style={{ fontSize: "48px", marginBottom: "40px" }}>
-          Our Teachers
-        </h2>
-
-        <p style={{ opacity: 0.7 }}>
-          Experienced instructors from top universities.
-        </p>
-      </section>
-
-      {/* CONTACT */}
-      <section
-        id="contact"
-        style={{
-          padding: "120px 80px",
-        }}
-      >
-        <h2 style={{ fontSize: "48px", marginBottom: "40px" }}>
-          Contact Us
-        </h2>
-
-        <p>Email: corelabacademy@gmail.com</p>
-        <p>LINE: @corelabacademy</p>
       </section>
     </main>
   );
