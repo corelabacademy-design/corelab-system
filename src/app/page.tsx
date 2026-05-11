@@ -2,258 +2,210 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main
-      style={{
-        background: "#050505",
-        color: "white",
-        minHeight: "100vh",
-        fontFamily: "sans-serif",
-      }}
-    >
-      {/* NAVBAR */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "20px 50px",
-          borderBottom: "1px solid #1a1a1a",
-        }}
-      >
-        {/* LOGO */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "15px",
-          }}
-        >
-          <div
-            style={{
-              width: "32px",
-              height: "32px",
-              background: "#f2b233",
-              borderRadius: "8px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "#000",
-              fontWeight: "bold",
-            }}
-          >
+    <main className="bg-black text-white min-h-screen flex flex-col">
+      
+      {/* TOP NAVBAR */}
+      <header className="h-16 border-b border-zinc-800 flex items-center justify-between px-10">
+        
+        <div className="flex items-center gap-4">
+          <div className="w-8 h-8 rounded-lg bg-yellow-400 text-black flex items-center justify-center font-bold">
             C
           </div>
 
-          <h2 style={{ letterSpacing: "4px" }}>CORE LAB</h2>
+          <h1 className="tracking-[4px] text-xl font-semibold">
+            CORE <span className="text-yellow-400">LAB</span>
+          </h1>
         </div>
 
-        {/* MENU */}
-        <div
-          style={{
-            display: "flex",
-            gap: "35px",
-            opacity: 0.8,
-          }}
-        >
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            Home
-          </a>
+        <nav className="hidden md:flex gap-10 text-zinc-400">
+          <a href="#">Home</a>
+          <a href="#">Courses</a>
+          <a href="#">Programs</a>
+          <a href="#">About Us</a>
+          <a href="#">Success Stories</a>
+          <a href="#">Contact</a>
+        </nav>
 
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            Courses
-          </a>
-
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            Programs
-          </a>
-
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            About Us
-          </a>
-
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            Success Stories
-          </a>
-
-          <a href="#" style={{ color: "white", textDecoration: "none" }}>
-            Contact
-          </a>
-        </div>
-
-        {/* BUTTONS */}
-        <div
-          style={{
-            display: "flex",
-            gap: "15px",
-          }}
-        >
-          <button
-            style={{
-              background: "transparent",
-              border: "1px solid #333",
-              color: "white",
-              padding: "10px 25px",
-              borderRadius: "12px",
-            }}
-          >
+        <div className="flex gap-4">
+          <button className="border border-zinc-700 px-6 py-2 rounded-xl">
             Login
           </button>
 
-          <button
-            style={{
-              background: "#f2b233",
-              border: "none",
-              color: "#000",
-              padding: "10px 25px",
-              borderRadius: "12px",
-              fontWeight: "bold",
-            }}
-          >
+          <button className="bg-yellow-400 text-black px-6 py-2 rounded-xl font-semibold">
             Dashboard
           </button>
         </div>
-      </nav>
+      </header>
 
-      {/* LOGIN CARD */}
-      <section
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "80px 20px",
-        }}
-      >
-        <div
-          style={{
-            width: "420px",
-            background: "#11131c",
-            border: "1px solid #2a2a2a",
-            borderRadius: "30px",
-            padding: "50px",
-          }}
-        >
-          {/* ICON */}
-          <div
-            style={{
-              width: "48px",
-              height: "48px",
-              background: "#f2b233",
-              borderRadius: "10px",
-              margin: "0 auto",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "#000",
-              fontWeight: "bold",
-              marginBottom: "25px",
-            }}
-          >
-            C
+      {/* BODY */}
+      <div className="flex flex-1">
+
+        {/* SIDEBAR */}
+        <aside className="w-64 border-r border-zinc-900 bg-[#0b0d14] hidden lg:flex flex-col">
+          
+          <div className="p-6 border-b border-zinc-800">
+            <div className="flex items-center gap-3">
+              <div className="w-7 h-7 rounded-md bg-yellow-400 text-black flex items-center justify-center font-bold">
+                C
+              </div>
+
+              <h2 className="font-semibold tracking-[2px]">
+                CORELAB
+              </h2>
+            </div>
           </div>
 
-          <h1
-            style={{
-              textAlign: "center",
-              marginBottom: "10px",
-            }}
-          >
-            Welcome Back!
-          </h1>
+          <div className="flex-1 p-4">
 
-          <p
-            style={{
-              textAlign: "center",
-              opacity: 0.6,
-              marginBottom: "30px",
-            }}
-          >
-            Login to your account
-          </p>
+            <p className="text-xs text-zinc-600 mb-4 uppercase">
+              Main
+            </p>
 
-          {/* ROLE TABS */}
-          <div
-            style={{
-              display: "flex",
-              background: "#0a0c12",
-              borderRadius: "14px",
-              padding: "5px",
-              marginBottom: "25px",
-            }}
-          >
-            {["Student", "Teacher", "Admin", "Accounting"].map((role) => (
-              <button
-                key={role}
-                style={{
-                  flex: 1,
-                  padding: "12px",
-                  borderRadius: "10px",
-                  border: "none",
-                  background: role === "Teacher" ? "#f2b233" : "transparent",
-                  color: role === "Teacher" ? "#000" : "#aaa",
-                  fontWeight: "bold",
-                }}
-              >
-                {role}
+            <div className="space-y-2">
+
+              <button className="w-full bg-yellow-400/20 border-l-2 border-yellow-400 text-yellow-400 px-4 py-3 rounded-lg text-left">
+                🏠 Dashboard
               </button>
-            ))}
-          </div>
 
-          {/* INPUTS */}
-          <div style={{ marginBottom: "20px" }}>
-            <p style={{ marginBottom: "10px", opacity: 0.7 }}>
-              Email or Phone
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                📅 My Schedule
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                ✅ Attendance
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                📊 Grades
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                📝 Assignments
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                📚 Learning Materials
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                💳 Payments
+              </button>
+            </div>
+
+            <p className="text-xs text-zinc-600 mt-10 mb-4 uppercase">
+              More
             </p>
 
-            <input
-              type="text"
-              placeholder="Enter email or phone number"
-              style={{
-                width: "100%",
-                padding: "16px",
-                background: "#090b10",
-                border: "1px solid #222",
-                borderRadius: "12px",
-                color: "white",
-              }}
-            />
-          </div>
+            <div className="space-y-2">
 
-          <div style={{ marginBottom: "25px" }}>
-            <p style={{ marginBottom: "10px", opacity: 0.7 }}>
-              Password
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                💬 Messages
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                🤖 AI Insights
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                👤 Profile
+              </button>
+
+              <button className="w-full hover:bg-zinc-800 px-4 py-3 rounded-lg text-left">
+                🚪 Logout
+              </button>
+            </div>
+
+          </div>
+        </aside>
+
+        {/* MAIN CONTENT */}
+        <section className="flex-1 flex items-center justify-center p-10">
+
+          <div className="w-full max-w-md bg-[#11131c] border border-zinc-800 rounded-[32px] p-10">
+
+            {/* ICON */}
+            <div className="w-14 h-14 rounded-xl bg-yellow-400 text-black flex items-center justify-center font-bold text-2xl mx-auto">
+              C
+            </div>
+
+            <h1 className="text-5xl font-serif text-center mt-8">
+              CORELAB
+            </h1>
+
+            <p className="text-center text-zinc-500 mt-3">
+              Welcome Back!
             </p>
 
-            <input
-              type="password"
-              placeholder="Enter your password"
-              style={{
-                width: "100%",
-                padding: "16px",
-                background: "#090b10",
-                border: "1px solid #222",
-                borderRadius: "12px",
-                color: "white",
-              }}
-            />
+            {/* ROLE TABS */}
+            <div className="grid grid-cols-4 bg-black rounded-2xl p-1 mt-8">
+              
+              <button className="bg-yellow-400 text-black py-3 rounded-xl font-semibold">
+                Student
+              </button>
+
+              <button className="text-zinc-400">
+                Teacher
+              </button>
+
+              <button className="text-zinc-400">
+                Admin
+              </button>
+
+              <button className="text-zinc-400">
+                Finance
+              </button>
+            </div>
+
+            {/* INPUT */}
+            <div className="mt-8 space-y-5">
+
+              <input
+                placeholder="Email or Phone"
+                className="w-full bg-black border border-zinc-800 rounded-xl p-4"
+              />
+
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full bg-black border border-zinc-800 rounded-xl p-4"
+              />
+
+              <button className="w-full bg-yellow-400 text-black font-semibold py-4 rounded-xl">
+                Login
+              </button>
+            </div>
+
           </div>
 
-          {/* LOGIN BUTTON */}
-          <button
-            style={{
-              width: "100%",
-              padding: "16px",
-              background: "#f2b233",
-              border: "none",
-              borderRadius: "14px",
-              color: "#000",
-              fontWeight: "bold",
-              fontSize: "16px",
-            }}
-          >
-            Login
-          </button>
-        </div>
-      </section>
+        </section>
+
+      </div>
+
+      {/* BOTTOM MENU */}
+      <footer className="h-16 border-t border-zinc-900 flex items-center justify-center gap-4 bg-[#0b0d14]">
+
+        <button className="px-6 py-2 rounded-xl border border-zinc-800">
+          🏠 Home
+        </button>
+
+        <button className="px-6 py-2 rounded-xl border border-zinc-800">
+          🔑 Login
+        </button>
+
+        <button className="px-6 py-2 rounded-xl border border-zinc-800">
+          🎓 Student
+        </button>
+
+        <button className="px-6 py-2 rounded-xl border border-zinc-800">
+          👨‍👩‍👧 Parent
+        </button>
+
+        <button className="px-6 py-2 rounded-xl border border-zinc-800">
+          ⚙️ Admin
+        </button>
+
+      </footer>
+
     </main>
   );
 }
