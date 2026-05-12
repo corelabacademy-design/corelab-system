@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -26,8 +27,8 @@ export default function Home() {
         </div>
 
         <h1 className="text-6xl font-bold leading-tight tracking-tight mb-4">
-          Future Learning<br />
-          <span className="text-zinc-600">Platform</span>
+          CORELAB ACADEMY<br />
+          <span className="text-zinc-600">EDTECH PLATFORM</span>
         </h1>
 
         <p className="text-zinc-500 text-base max-w-sm leading-relaxed mb-8">
